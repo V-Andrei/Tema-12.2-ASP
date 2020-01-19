@@ -17,17 +17,17 @@
             </thead>
             <tbody>
                 @{
-                foreach (var student in Model)
-                {
-                <tr>
-                    <th scope="row">@student.Id</th>
-                    <th>@student.Name</th>
-                    <th>@student.Faculty</th>
-                    <th>@student.Email</th>
-                    <th><button type="button" class="btn btn-dark">View</button></th>
-                </tr>
+                        foreach (var student in Model)
+                        {
+                        <tr>
+                            <th scope="row">@student.Id</th>
+                            <th>@student.Name</th>
+                            <th>@student.Faculty</th>
+                            <th>@student.Email</th>
+                            <th><button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("ById", "Home",new {student.Id})'">View</button></th>
+                        </tr>                   
+                        }
                     }
-                }
             </tbody>
             </table>
     </div>
